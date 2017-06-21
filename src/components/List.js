@@ -17,6 +17,6 @@ export class List extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    
+    backgroundColor: 'blue'
   }
 });

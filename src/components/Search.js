@@ -1,5 +1,7 @@
-import {StyleSheet, TextInput, Text, TouchableHighlight, View} from 'react-native';
+import {Dimensions, StyleSheet, TextInput, Text, TouchableHighlight, View} from 'react-native';
 import  React, {Component} from 'react';
+
+const {height, width} = Dimensions.get('window');
 
 export class Search extends Component {
   static defaultProps = {
@@ -15,10 +17,12 @@ export class Search extends Component {
   }
 
   handlePress(){
-    this.props.handlePress(this.state.value);
-    this.setState({
-      value: ''
-    })
+    if(this.state.value){
+      this.props.handlePress(this.state.value);
+      this.setState({
+        value: ''
+      })
+    }
   }
 
   setValue(text) {
@@ -43,8 +47,14 @@ export class Search extends Component {
 }
 
 const styles = StyleSheet.create({
+  button: {
+    backgroundColor: 'yellow'
+  },
   container: {
-
+    backgroundColor: 'red',
+    borderRadius: 5,
+    height: height / 8,
+    justifyContent: 'center'
   },
   input: {
     height: 20,
