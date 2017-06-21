@@ -4,15 +4,37 @@ import  React, {Component} from 'react';
 export class Search extends Component {
   static defaultProps = {
     buttonText: 'SEARCH',
-    handlePress: null,
-    value: ''
+    handlePress: null
+  }
+
+  constructor() {
+    super();
+    this.state = {
+      value: ''
+    }
+  }
+
+  handlePress(){
+    this.props.handlePress(this.state.value);
+    this.setState({
+      value: ''
+    })
+  }
+
+  setValue(text) {
+    this.setState({
+      value: text
+    })
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <TextInput style={styles.input} value={this.props.value} />
-        <TouchableHighlight onPress={this.props.handlePress.bind(this)}>
+        <TextInput style={styles.input}
+          onChangeText={(text) => this.setValue(text)}
+          value={this.state.value}
+        />
+        <TouchableHighlight onPress={this.handlePress.bind(this)}>
           <Text>{this.props.buttonText}</Text>
         </TouchableHighlight>
       </View>
@@ -25,6 +47,7 @@ const styles = StyleSheet.create({
 
   },
   input: {
-    height: 20
+    height: 20,
+    width: 100
   }
 });

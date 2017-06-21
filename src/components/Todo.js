@@ -24,7 +24,8 @@ class Container extends Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'green',
-    flex: 1
+    flex: 1,
+    padding: 50
   }
 });
 
