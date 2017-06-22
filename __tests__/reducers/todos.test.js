@@ -1,22 +1,31 @@
 import {List} from 'immutable';
 
 import {todos} from '../../src/reducers/todos';
-import {createTodo, deleteTodo} from '../../src/actions/actionCreators';
+import {ADD_TODO, DEL_TODO} from '../../src/actions/actionTypes';
 
 test('properly adds todo item', () => {
   var state = List();
-  var action = createTodo('test1');
+  var action = {
+    type: ADD_TODO,
+    payload: 'test1'
+  };
 
-  var result = List([{id: 0, todo: 'test1'}])
+  var result = List([
+    {id: 0, todo: 'test1'},
+    ...state
+  ])
 
   expect(todos(state, action)).toEqual(result);
 
   var state = result;
-  var action = createTodo('test2');
+  var action = {
+    type: ADD_TODO,
+    payload: 'test2'
+  };
 
   var result = List([
     {id: 1, todo: 'test2'},
-    {id: 0, todo: 'test1'}
+    ...state
   ]);
 
   expect(todos(state, action)).toEqual(result);
@@ -27,7 +36,10 @@ test('properly removes todo item', () => {
     {id: 1, todo: 'test2'},
     {id: 0, todo: 'test1'}
   ]);
-  var action = deleteTodo(0);
+  var action = {
+    type: DEL_TODO,
+    payload: 0
+  };
 
   var result = List([{id: 1, todo: 'test2'}]);
 
@@ -36,7 +48,10 @@ test('properly removes todo item', () => {
 
 test('removing last item returns empty array', () => {
   var state = List([{id: 0, todo: 'test'}]);
-  var action = deleteTodo(0);
+  var action = {
+    type: DEL_TODO,
+    payload: 0
+  };
 
   var result = List();
 
