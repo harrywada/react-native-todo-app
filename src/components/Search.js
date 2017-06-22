@@ -48,13 +48,15 @@ export class Search extends Component {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'yellow'
+    backgroundColor: 'yellow',
+    justifyContent: 'center',
+    width: 10
   },
   container: {
     backgroundColor: 'red',
     borderRadius: 5,
     height: height / 8,
-    justifyContent: 'center'
+    padding: 10
   },
   input: {
     height: 20,

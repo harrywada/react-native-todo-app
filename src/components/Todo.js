@@ -15,7 +15,7 @@ class Container extends Component {
           buttonText='ADD'
           handlePress={this.props.addTodo}
         />
-        <List items={this.props.todos} />
+        <List />
       </View>
     )
   }
@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'green',
     flex: 1,
+    justifyContent: 'center',
     padding: 50
   }
 });
