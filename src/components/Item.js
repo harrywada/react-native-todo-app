@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import {Dimensions, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+
+const {height, width} = Dimensions.get('window');
 
 export class Item extends Component {
   static defaultProps = {
@@ -22,6 +24,16 @@ export class Item extends Component {
 
 const styles = StyleSheet.create({
   container: {
-
+    flexDirection: 'row'
+  },
+  deleteButton: {
+    backgroundColor: 'red',
+    borderRadius: 4,
+    borderWidth: 0.5,
+    borderColor: '#d6d7da',
+    flex: 1
+  },
+  label: {
+    flex: 5
   }
 });

@@ -11,11 +11,13 @@ class Container extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Search
-          buttonText='ADD'
-          handlePress={this.props.addTodo}
-        />
-        <List />
+        <View style={styles.content}>
+          <Search
+            buttonText='ADD'
+            handlePress={this.props.addTodo}
+          />
+          <List />
+        </View>
       </View>
     )
   }
@@ -23,10 +25,13 @@ class Container extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'green',
+    backgroundColor: '#e4fde1',
     flex: 1,
-    justifyContent: 'center',
-    padding: 50
+    padding: 25
+  },
+  content: {
+    backgroundColor: 'green',
+    flex: 1
   }
 });
 

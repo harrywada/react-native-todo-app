@@ -25,13 +25,13 @@ export class Container extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'blue'
+    backgroundColor: '#456990',
+    flex: 5
   }
 });
 
 const mapActionsToProps = (dispatch) => ({
   deleteTodo(i) {
-    console.log('i: ' + i);
     return dispatch(deleteTodo(i));
   }
 });

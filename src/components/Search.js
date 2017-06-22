@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet, TextInput, Text, TouchableHighlight, View} from 'react-native';
-import  React, {Component} from 'react';
+import React, {Component} from 'react';
 
 const {height, width} = Dimensions.get('window');
 
@@ -38,8 +38,11 @@ export class Search extends Component {
           onChangeText={(text) => this.setValue(text)}
           value={this.state.value}
         />
-        <TouchableHighlight onPress={this.handlePress.bind(this)}>
-          <Text>{this.props.buttonText}</Text>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this.handlePress.bind(this)}
+        >
+          <Text style={styles.buttonLabel}>{this.props.buttonText}</Text>
         </TouchableHighlight>
       </View>
     );
@@ -47,19 +50,21 @@ export class Search extends Component {
 }
 
 const styles = StyleSheet.create({
+  buttonLabel: {
+    color: '#e4fde1'
+  },
   button: {
-    backgroundColor: 'yellow',
-    justifyContent: 'center',
-    width: 10
+    backgroundColor: '#6b2737',
+    flex: 2,
+    justifyContent: 'center'
   },
   container: {
-    backgroundColor: 'red',
-    borderRadius: 5,
-    height: height / 8,
+    backgroundColor: '#f45b69',
+    flexDirection: 'row',
+    flex: 1,
     padding: 10
   },
   input: {
-    height: 20,
-    width: 100
+    flex: 3
   }
 });
