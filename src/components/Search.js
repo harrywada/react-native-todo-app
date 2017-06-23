@@ -56,12 +56,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#7fd8be',
     borderRadius: 10,
     flex: 1,
-<<<<<<< HEAD
-    justifyContent: 'center'
-=======
     justifyContent: 'center',
     marginLeft: 10
->>>>>>> master
   },
   container: {
     backgroundColor: '#f45b69',

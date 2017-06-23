@@ -10,11 +10,7 @@ export class Container extends Component {
       <View style={styles.container}>
         <ScrollView>
           {this.props.items.map((item, i) => (
-<<<<<<< HEAD
-            <Item key={i} id={item.id} content={item.todo} handleDelete={this.props.deleteTodo} />
-=======
             <Item key={i} id={item.id} complete={item.complete} content={item.todo} />
->>>>>>> master
           ))}
         </ScrollView>
       </View>

@@ -44,38 +44,6 @@ const styles = StyleSheet.create({
     marginLeft: 5
   },
   container: {
-<<<<<<< HEAD
-    alignItems: 'center',
-    backgroundColor: '#d7dcdd',
-    borderRadius: 30,
-    flex: 1,
-    flexDirection: 'row',
-    height: 50,
-    padding: 5,
-    paddingLeft: 20,
-    marginBottom: 10
-  },
-  deleteButtonLabel: {
-    color: '#fff'
-  },
-  deleteButton: {
-    alignItems: 'center',
-    backgroundColor: '#f45b69',
-    borderRadius: 30,
-    flex: 1,
-    height: 40,
-    justifyContent: 'center'
-=======
-<<<<<<< Updated upstream
-    flexDirection: 'row'
-  },
-  deleteButton: {
-    backgroundColor: 'red',
-    borderRadius: 4,
-    borderWidth: 0.5,
-    borderColor: '#d6d7da',
-    flex: 1
-=======
     alignItems: 'center',
     backgroundColor: 'green',
     borderRadius: 30,
@@ -91,8 +59,6 @@ const styles = StyleSheet.create({
   },
   deleteButton: {
     backgroundColor: '#f45b69',
->>>>>>> Stashed changes
->>>>>>> master
   },
   label: {
     flex: 5
