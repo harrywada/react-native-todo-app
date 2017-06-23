@@ -2,11 +2,6 @@ import {StyleSheet, TextInput, Text, TouchableHighlight, View} from 'react-nativ
 import React, {Component} from 'react';
 
 export class Search extends Component {
-  static defaultProps = {
-    buttonText: 'SEARCH',
-    handlePress: null
-  }
-
   constructor() {
     super();
     this.state = {
@@ -61,7 +56,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#7fd8be',
     borderRadius: 10,
     flex: 1,
+<<<<<<< HEAD
     justifyContent: 'center'
+=======
+    justifyContent: 'center',
+    marginLeft: 10
+>>>>>>> master
   },
   container: {
     backgroundColor: '#f45b69',
