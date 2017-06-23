@@ -14,7 +14,7 @@ export const todos = (state = List(), {type, payload}) => {
       };
       return state.insert(0, newTodo);
     case COMPLETE_TODO:
-      var index = state.find((todo) => todo.id === payload);
+      var index = state.findIndex((todo) => todo.id === payload);
       return state.update(index, (todo) => ({
         complete: true,
         id: todo.id,
@@ -23,7 +23,7 @@ export const todos = (state = List(), {type, payload}) => {
     case DEL_TODO:
       return state.filter((todo) => (todo.id !== payload));
     case INCOMPLETE_TODO:
-      var index = state.find((todo) => todo.id === payload);
+      var index = state.findIndex((todo) => todo.id === payload);
       return state.update(index, (todo) => ({
         complete: false,
         id: todo.id,
