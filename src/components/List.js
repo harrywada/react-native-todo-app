@@ -1,5 +1,5 @@
 import  React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
 
 import {deleteTodo} from '../actions/actionCreators';
@@ -12,12 +12,13 @@ export class Container extends Component {
   }
 
   render() {
-    console.log(this.props.items);
     return (
       <View style={styles.container}>
-        {this.props.items.map((item, i) => (
-          <Item key={i} id={item.id} content={item.todo} handleDelete={this.props.deleteTodo} />
-        ))}
+        <ScrollView>
+          {this.props.items.map((item, i) => (
+            <Item key={i} id={item.id} content={item.todo} handleDelete={this.props.deleteTodo} />
+          ))}
+        </ScrollView>
       </View>
     );
   }
@@ -26,7 +27,10 @@ export class Container extends Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#456990',
-    flex: 5
+    borderRadius: 20,
+    flex: 9,
+    flexDirection: 'column',
+    padding: 10
   }
 });
 

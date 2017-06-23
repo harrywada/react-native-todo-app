@@ -13,7 +13,7 @@ class Container extends Component {
       <View style={styles.container}>
         <View style={styles.content}>
           <Search
-            buttonText='ADD'
+            buttonText='+'
             handlePress={this.props.addTodo}
           />
           <List />
@@ -23,14 +23,15 @@ class Container extends Component {
   }
 }
 
+//color scheme: d7cdcc-456990-e4fde1-f45b69-ffffff
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#e4fde1',
     flex: 1,
-    padding: 25
+    padding: 25,
+    paddingTop: 40
   },
   content: {
-    backgroundColor: 'green',
     flex: 1
   }
 });

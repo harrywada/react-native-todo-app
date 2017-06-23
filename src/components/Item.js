@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import {Dimensions, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
-
-const {height, width} = Dimensions.get('window');
+import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 
 export class Item extends Component {
   static defaultProps = {
@@ -12,10 +10,10 @@ export class Item extends Component {
 
   render() {
     return (
-      <View>
-        <Text>{this.props.content}</Text>
-        <TouchableHighlight onPress={() => (this.props.handleDelete(this.props.id))}>
-          <Text>X</Text>
+      <View style={styles.container}>
+        <Text style={styles.label}>{this.props.content}</Text>
+        <TouchableHighlight style={styles.deleteButton} onPress={() => (this.props.handleDelete(this.props.id))}>
+          <Text style={styles.deleteButtonLabel}>X</Text>
         </TouchableHighlight>
       </View>
     );
@@ -24,14 +22,26 @@ export class Item extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row'
+    alignItems: 'center',
+    backgroundColor: '#d7dcdd',
+    borderRadius: 30,
+    flex: 1,
+    flexDirection: 'row',
+    height: 50,
+    padding: 5,
+    paddingLeft: 20,
+    marginBottom: 10
+  },
+  deleteButtonLabel: {
+    color: '#fff'
   },
   deleteButton: {
-    backgroundColor: 'red',
-    borderRadius: 4,
-    borderWidth: 0.5,
-    borderColor: '#d6d7da',
-    flex: 1
+    alignItems: 'center',
+    backgroundColor: '#f45b69',
+    borderRadius: 30,
+    flex: 1,
+    height: 40,
+    justifyContent: 'center'
   },
   label: {
     flex: 5
