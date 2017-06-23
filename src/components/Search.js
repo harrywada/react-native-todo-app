@@ -4,11 +4,6 @@ import React, {Component} from 'react';
 const {height, width} = Dimensions.get('window');
 
 export class Search extends Component {
-  static defaultProps = {
-    buttonText: 'SEARCH',
-    handlePress: null
-  }
-
   constructor() {
     super();
     this.state = {
@@ -54,9 +49,12 @@ const styles = StyleSheet.create({
     color: '#e4fde1'
   },
   button: {
-    backgroundColor: '#6b2737',
-    flex: 2,
-    justifyContent: 'center'
+    alignItems: 'center',
+    backgroundColor: '#7fd8be',
+    borderRadius: 10,
+    flex: 1,
+    justifyContent: 'center',
+    marginLeft: 10
   },
   container: {
     backgroundColor: '#f45b69',
