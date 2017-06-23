@@ -44,16 +44,6 @@ const styles = StyleSheet.create({
     marginLeft: 5
   },
   container: {
-<<<<<<< Updated upstream
-    flexDirection: 'row'
-  },
-  deleteButton: {
-    backgroundColor: 'red',
-    borderRadius: 4,
-    borderWidth: 0.5,
-    borderColor: '#d6d7da',
-    flex: 1
-=======
     alignItems: 'center',
     backgroundColor: 'green',
     borderRadius: 30,
@@ -69,7 +59,6 @@ const styles = StyleSheet.create({
   },
   deleteButton: {
     backgroundColor: '#f45b69',
->>>>>>> Stashed changes
   },
   label: {
     flex: 5
