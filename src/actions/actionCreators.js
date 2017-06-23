@@ -1,4 +1,14 @@
-import {ADD_TODO, DEL_TODO} from './actionTypes';
+import {ADD_TODO,
+        COMPLETE_TODO,
+        DEL_TODO,
+        INCOMPLETE_TODO} from './actionTypes';
+
+export const completeTodo = (id) => {
+  return {
+    type: COMPLETE_TODO,
+    payload: id
+  }
+}
 
 export const createTodo = (todo) => {
   return {
@@ -10,6 +20,13 @@ export const createTodo = (todo) => {
 export const deleteTodo = (id) => {
   return {
     type: DEL_TODO,
+    payload: id
+  }
+}
+
+export const incompleteTodo = (id) => {
+  return {
+    type: INCOMPLETE_TODO,
     payload: id
   }
 }
